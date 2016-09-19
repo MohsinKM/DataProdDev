@@ -27,9 +27,12 @@ At the bottom of prediction K-means cluster is plotted based on user given infor
 
 1. Shiny app:[https://kmmohsin.shinyapps.io/iris_pred_app_deploy/][1]
 2. Git Repo: [https://github.com/MohsinKM/DataProdDev.git] [2]
+3. Rpresent: [http://rpubs.com/Mohsin/iris_spec_predicion] [3]
 [1]: https://kmmohsin.shinyapps.io/iris_pred_app_deploy/
  "Title"
 [2]: https://github.com/MohsinKM/DataProdDev.git 
+[3]: http://rpubs.com/Mohsin/iris_spec_predicion
+
 
 
 Author: K.M. Mohsin,

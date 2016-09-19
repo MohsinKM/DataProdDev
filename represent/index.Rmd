@@ -1,0 +1,71 @@
+---
+title       : Predicting IRIS species
+subtitle    : 
+author      : KM Mohsin (mohsin.eee@gmail.com)
+job         : Ph.D. candidate, Louisiana State University
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets    : [bootstrap, quiz, shiny, interactive]
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+ext_widgets: {rCharts: [libraries/nvd3]}
+---
+
+## Introduction
+
+1. This shiny app is to predict "iris" flower "species" based on "random forest" algorithm. 
+2. Once, attributes of flower are given this app will predict the species. 
+3. This app also plots k means cluster of "iris" R- dataset.
+
+## Input output
+Once input are typed in text box on left panel user should hit "predict" button to see predicted "species". Four attributes are
+1.	Sepal Length
+2.	Sepal Width
+3.	Petal Length
+4.	Petal Width
+
+Beside these four numeric input users will be able to choose axis of cluster plot from drop down menu. First drop down menu is for x axis and second one for y axis. Cluster number can be chosen from a numeric input either by typing an integer or just by clicking up/down arrow.
+
+---
+
+## Prediction
+
+"Random forest" machine learning algorithm used to predict speices. 
+
+### Prediction with Random Forest
+```{r }
+library(randomForest)
+data("iris")
+mod_rf <- randomForest(Species~.,data=iris,ntrees = 8)
+test<-iris[1,1:4]
+pred_test<-predict(mod_rf,newdata = test) #results of test
+as.character(pred_test)
+```
+
+---
+## Plot
+
+To explore iris data set we can plot different speices SepalLength vs. SepalWidth to see the different classification. 
+
+
+```{r echo = F, results = 'asis'}
+require(rCharts)
+names(iris) = gsub("\\.", "", names(iris))
+iris = as.data.frame(iris)
+
+r1<-nPlot(SepalLength ~ SepalWidth,group= 'Species', data = iris, type = 'multiBarChart')
+r1$print('chart1')
+```
+
+
+---
+## Thanks
+### References
+
+1. Shiny app:[https://kmmohsin.shinyapps.io/iris_pred_app_deploy/][1]
+2. Git Repo: [https://github.com/MohsinKM/DataProdDev.git] [2]
+[1]: https://kmmohsin.shinyapps.io/iris_pred_app_deploy/
+ "Title"
+[2]: https://github.com/MohsinKM/DataProdDev.git 
+
