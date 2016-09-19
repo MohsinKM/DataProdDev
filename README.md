@@ -6,6 +6,8 @@ This shiny app is to predict "iris" flower "species" based on "random forest" al
 
 Please locate shiny folder for further information. 
 
+
+
 ## Data
 
 In R-data set "iris" has been used in this project.
@@ -22,6 +24,12 @@ All the length is in centimeter. Beside these four numeric input users will be a
 ## Output: 
 Once "predict" button is clicked shiny server will use "random forest" machine learning algorithm on "iris" data set for modeling. Based on model parameter prediction will be made on user given information. On right panel user will see what information he provided along with predicted result. 
 At the bottom of prediction K-means cluster is plotted based on user given information about x and y axis. Number of cluster is based on the numeric input of cluster numbers. 
+
+1. Shiny app:[https://kmmohsin.shinyapps.io/iris_pred_app_deploy/][1]
+2. Git Repo: [https://github.com/MohsinKM/DataProdDev.git] [2]
+[1]: https://kmmohsin.shinyapps.io/iris_pred_app_deploy/
+ "Title"
+[2]: https://github.com/MohsinKM/DataProdDev.git 
 
 
 Author: K.M. Mohsin,
